@@ -5,11 +5,10 @@ import sys
 #Einrichtung des MainFrames, in welchem die Buttons angezeigt werden
 class mainWindow(QMainWindow):
     def __init__(self):    
-        self.app = QApplication(sys.argv)
+        super().__init__()        
         self.window=QWidget()
-        self.window.show()
-        self.app.exec_()
         self.setWindowTitle('Portalübersicht')
+        self.createButtonContainer()
 
     # Erstellung eines Button-Containers
     def createButtonContainer(self):
@@ -22,3 +21,8 @@ class mainWindow(QMainWindow):
         self.button2=pushButtons.pushButton2()
         self.button1.show()
         self.button2.show()
+
+app = QApplication(sys.argv)
+window=QWidget()
+window.show()
+app.exec()

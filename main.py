@@ -1,4 +1,4 @@
 import frontend.mainWindow
 
 if __name__ == "__main__":
-    root=frontend.mainWindow()
+    root = frontend.mainWindow.mainWindow()
