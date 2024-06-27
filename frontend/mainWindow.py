@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QVBoxLayout
 import frontend.pushButtons as pushButtons
 import sys
 
@@ -10,21 +10,21 @@ class mainWindow(QMainWindow):
         self.setWindowTitle('Portalübersicht')
         self.createButtonContainer()
         self.createButtons()
-        self.setCentralWidget(self.buttonContainer)
+        self.setCentralWidget(self.widget)
 
-    # Erstellung eines Button-Containers
-    def createButtonContainer(self):
-        self.buttonContainer=QWidget()
-        self.buttonContainer.show()
+    layout=QVBoxLayout()
+    widgets=[
+        pushButtons.pushButton1(),
+        pushButtons.pushButton2()
+    ]
 
-    # Erstellung der Buttons
-    def createButtons(self):
-        self.button1=pushButtons.pushButton1()
-        self.button2=pushButtons.pushButton2()
-        self.button1.show()
-        self.button2.show()
+    for widget in widgets:
+        layout.addWidget(widget())
+
+    widget = QWidget()
+    widget.setLayout(layout)
 
 app = QApplication(sys.argv)
-window=QWidget()
+window=mainWindow()
 window.show()
 app.exec()
