@@ -9,6 +9,8 @@ class mainWindow(QMainWindow):
         self.window=QWidget()
         self.setWindowTitle('Portalübersicht')
         self.createButtonContainer()
+        self.createButtons()
+        self.setCentralWidget(self.buttonContainer)
 
     # Erstellung eines Button-Containers
     def createButtonContainer(self):
