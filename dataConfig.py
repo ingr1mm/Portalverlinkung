@@ -1,1 +1,0 @@
-file_path="C:\Users\carst\OneDrive\Desktop\SensoLinks.xlsx"

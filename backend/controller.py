@@ -1,9 +1,8 @@
-import dataConfig
+import backend.dataConfig as dataConfig
 import pandas as pd
 
 # Load data
 datastream=pd.read_excel(dataConfig.file_path)
-datastream.head()
 
 # Setzt die Spaltennamen
 datastream.columns=['Portalnummer','Portalname','Link']

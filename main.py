@@ -1,4 +1,4 @@
-import frontendMainFrame
+import frontend.mainWindow
 
 if __name__ == "__main__":
-    root=frontendMainFrame.mainFrame()
+    root=frontend.mainWindow()
