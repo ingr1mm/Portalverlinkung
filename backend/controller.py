@@ -1,19 +1,18 @@
 import backend.dataConfig as dataConfig
 import pandas as pd
 
-# Load data
-datastream=pd.read_excel(dataConfig.file_path)
+class Controller:
+    def __init__(self):        
+        self.datastream.columns=['Portalnummer','Portalname','Link']
+        self.namePortal1=self.datastream.loc[self.datastream['Portalnummer']==1, 'Portalname'].iloc[0]
+        self.namePortal2=self.datastream.loc[self.datastream['Portalnummer']==2, 'Portalname'].iloc[0]
+        self.linkPortal1=self.datastream.loc[self.datastream['Portalnummer']==1, 'Link'].iloc[0]
+        self.linkPortal2=self.datastream.loc[self.datastream['Portalnummer']==2, 'Link'].iloc[0]
+       
+    def getDatastream(self, file_path):
+        self.datastream = pd.read_excel(file_path)
+        return self.datastream
 
-# Setzt die Spaltennamen
-datastream.columns=['Portalnummer','Portalname','Link']
-
-# Portalname wird entsprechend der Portalnummer gesetzt
-namePortal1=datastream.loc[datastream['Portalnummer']==1, 'Portalname'].iloc[0]
-namePortal1=datastream.loc[datastream['Portalnummer']==2, 'Portalname'].iloc[0]
-
-# Portallink wird entsprechend der Portalnummer gesetzt
-linkPortal1=datastream.loc[datastream['Portalnummer']==1, 'Link'].iloc[0]
-linkPortal2=datastream.loc[datastream['Portalnummer']==2, 'Link'].iloc[0]
 
 
 # Ideen zur Abstraktion
